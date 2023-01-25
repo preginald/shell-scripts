@@ -3,6 +3,9 @@
 # Ask the user for the location to create the files
 read -p "Enter the location to create the files: " location
 
+# Expand the tilde character to the home directory path
+location=${location/#\~/$HOME}
+
 # Check if the location exists, if not create it
 if [ ! -d "$location" ]; then
   mkdir -p "$location"
