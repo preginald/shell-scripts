@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Ask the user for the location to create the files
+read -p "Enter the location to create the files: " location
+
 # Ask the user how many files to create
 read -p "Enter the number of files to create: " num_files
 
@@ -22,7 +25,7 @@ do
   # Choose a random extension from the extension array
   rand_extension=${extension_array[$RANDOM % ${#extension_array[@]}]}
 
-  # Create the file with the random word and extension
-  touch "$rand_word.$rand_extension"
-  echo "File $rand_word.$rand_extension created"
+  # Create the file with the random word and extension in the specified location
+  touch "$location/$rand_word.$rand_extension"
+  echo "File $location/$rand_word.$rand_extension created"
 done
