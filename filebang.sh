@@ -3,6 +3,12 @@
 # Ask the user for the location to create the files
 read -p "Enter the location to create the files: " location
 
+# Check if the location exists, if not create it
+if [ ! -d "$location" ]; then
+  mkdir -p "$location"
+  echo "Directory $location created"
+fi
+
 # Ask the user how many files to create
 read -p "Enter the number of files to create: " num_files
 
