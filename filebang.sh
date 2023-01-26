@@ -34,7 +34,10 @@ do
   # Choose a random extension from the extension array
   rand_extension=${extension_array[$RANDOM % ${#extension_array[@]}]}
 
+  # Add random number to the end of the word
+  rand_number=$RANDOM
+
   # Create the file with the random word and extension in the specified location
-  touch "$location/$rand_word.$rand_extension"
-  echo "File $location/$rand_word.$rand_extension created"
+  touch "$location/$rand_word$rand_number.$rand_extension"
+  echo "File $location/$rand_word$rand_number.$rand_extension created"
 done
